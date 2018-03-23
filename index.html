@@ -2,6 +2,14 @@
   <head>
     <title>Vue.js Basics</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+      .one{
+        color: green;
+      }
+      .two{
+        text-decoration: line-through;
+      }
+    </style>
   </head>
   <body>
 
@@ -9,6 +17,9 @@
     <div id="app">
       <h2>{{ title }}</h2>
       <p>{{ greet('morning') }}</p>
+      <a :href="url">YouTube</a>
+      <div :class="classes">element with classes</div>
+      <input type="text" :value="name" />
     </div>
 
   </body>

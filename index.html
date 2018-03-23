@@ -16,9 +16,12 @@
     <h1>Vue Basics</h1>
     <div id="app">
       <h2>{{ title }}</h2>
-      <button type="text" @click.alt="logMessage">Alt-click me</button>
-      <button type="text" @click.shift="logMessage">Shift-click me</button>
-      <a href="http://www.google.com" @click.prevent="logMessage">Google</a>
+      
+      <p v-if="showName">Mario</p>
+      <p v-else-if="showAge">25</p>
+
+      <button @click="toggleName">Show Name: {{ showName }}</button>
+      <button @click="toggleAge">Show Age: {{ showAge }}</button>
     </div>
 
   </body>

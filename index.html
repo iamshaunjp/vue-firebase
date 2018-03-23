@@ -2,26 +2,20 @@
   <head>
     <title>Vue.js Basics</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <style>
-      .canvas{
-        width: 300px;
-        height: 300px;
-        background: #ddd;
-        margin-top: 20px;
-      }
-    </style>
   </head>
   <body>
 
     <h1>Vue Basics</h1>
     <div id="app">
       <h2>{{ title }}</h2>
-      
-      <p v-if="showName">Mario</p>
-      <p v-else-if="showAge">25</p>
-
-      <button @click="toggleName">Show Name: {{ showName }}</button>
-      <button @click="toggleAge">Show Age: {{ showAge }}</button>
+      <ul>
+        <li v-for="item in items">{{ item }}</li>
+      </ul>
+      <div v-for="(ninja, index) in ninjas">
+        <p>{{ index }} - {{ ninja.name }}</p>
+        <p>age: {{ ninja.age }}</p>
+        <p>belt colour: {{ ninja.belt }}</p>
+      </div>
     </div>
 
   </body>

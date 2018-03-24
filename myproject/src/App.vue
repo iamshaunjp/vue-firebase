@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <h1>{{ title }}</h1>
-    <Nav />
+    <Navbar />
   </div>
 </template>
 
 <script>
-import Nav from './nav'
+import Navbar from './Navbar'
 
 export default {
   name: 'app',
   components: {
-    Nav
+    Navbar
   },
   data () {
     return {

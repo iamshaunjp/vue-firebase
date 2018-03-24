@@ -1,7 +1,8 @@
 <template>
   <div class="blogs">
     <h2>Blogs</h2>
-    <div v-for="post in posts" :key="post.id">
+    <input type="text" v-model="searchTerm" placeholder="Search Posts">
+    <div v-for="post in filteredPosts" :key="post.id">
       <h3>{{ post.title }}</h3>
       <p>{{ post.body | snippet }}</p>
     </div>  
@@ -15,7 +16,15 @@ export default {
   name: 'Blogs',
   data(){
     return {
-      posts: []
+      posts: [],
+      searchTerm: ''
+    }
+  },
+  computed: {
+    filteredPosts(){
+      return this.posts.filter(post => {
+        return post.title.match(this.searchTerm)
+      })
     }
   },
   created(){
@@ -39,6 +48,12 @@ export default {
   background: #eee;
   padding: 10px;
   margin: 10px auto;
+}
+.blogs input{
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 </style>
 

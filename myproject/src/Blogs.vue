@@ -31,7 +31,15 @@ export default {
 </script>
 
 <style>
-
+.blogs{
+  max-width: 600px;
+  margin: 20px auto;
+}
+.blogs div{
+  background: #eee;
+  padding: 10px;
+  margin: 10px auto;
+}
 </style>
 
 

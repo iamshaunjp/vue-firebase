@@ -1,4 +1,4 @@
-# ninja-smoothies
+# ninja-chat
 
 > A Vue.js project
 

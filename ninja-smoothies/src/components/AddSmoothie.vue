@@ -1,7 +1,7 @@
 <template>
-  <div class="add-smoothie container z-depth-1" @submit.prevent="addSmoothie">
+  <div class="add-smoothie container z-depth-1">
     <h2 class="center-align indigo-text">Add New Smoothie Recipe</h2>
-    <form>
+    <form @submit.prevent="addSmoothie">
       <div class="field title">
         <label for="title">Smoothie title:</label>
         <input type="text" name="title" v-model="title">

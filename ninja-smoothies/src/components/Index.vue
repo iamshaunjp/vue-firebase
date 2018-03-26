@@ -49,7 +49,9 @@ export default {
 }
 .index .ingredients{
   margin: 30px auto;
-  display: flex;
+}
+.index .ingredients li{
+  display: inline-block;
 }
 .index .delete{
   position: absolute;

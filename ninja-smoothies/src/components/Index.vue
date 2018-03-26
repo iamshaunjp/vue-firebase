@@ -39,8 +39,10 @@ export default {
   text-align: center;
   margin-top: 0;
 }
-.ingredients{
+.index .ingredients{
   margin: 30px auto;
-  display: flex;
+}
+.index .ingredients li{
+  display: inline-block;
 }
 </style>

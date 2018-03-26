@@ -1,4 +1,4 @@
-# routing
+# ninja-smoothies
 
 > A Vue.js project
 

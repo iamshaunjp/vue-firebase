@@ -27,7 +27,6 @@ export default {
   methods: {
     deleteSmoothie(id){
       // delete doc from firestore
-      console.log(id)
       db.collection('smoothies').doc(id).delete()
       .then(() => {
         this.smoothies = this.smoothies.filter(smoothie => {

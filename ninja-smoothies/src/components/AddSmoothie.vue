@@ -6,6 +6,10 @@
         <label for="title">Smoothie title:</label>
         <input type="text" name="title" v-model="title">
       </div>
+      <div v-for="(ing, index) in ingredients" class="field ingredient" :key="index">
+        <label for="ingredient">Ingredient:</label>
+        <input type="text" name="ingredient" v-model="ingredients[index]">
+      </div>
       <div class="field add-ingredient">
         <label for="add-ingredient">Add an ingredient (press tab to add):</label>
         <input type="text" name="add-ingredient" @keydown.tab.prevent="addIng" v-model="another">
@@ -39,7 +43,7 @@ export default {
         this.another = null
         this.feedback = null
       } else {
-        this.feedback = 'You must enter a value to an an ingredient'
+        this.feedback = 'You must enter a value to add another ingredient'
       }
     }
   }

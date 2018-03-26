@@ -1,15 +1,16 @@
 import firebase from 'firebase'
+import firestore from 'firebase/firestore'
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyAU6bDBSNDwP8_9_FOgl9BjqSGFBUVakAw",
-  authDomain: "cooking-ninjas.firebaseapp.com",
-  databaseURL: "https://cooking-ninjas.firebaseio.com",
-  projectId: "cooking-ninjas",
-  storageBucket: "cooking-ninjas.appspot.com",
-  messagingSenderId: "867122103898"
+  apiKey: "AIzaSyD7S87xiP6Ni3tmIupnCByziklwk1HxzWw",
+  authDomain: "ninja-smoothies.firebaseapp.com",
+  databaseURL: "https://ninja-smoothies.firebaseio.com",
+  projectId: "ninja-smoothies",
+  storageBucket: "ninja-smoothies.appspot.com",
+  messagingSenderId: "979366054783"
 };
-const firebasebApp = firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
 
 // export firestore database
-export default firebasebApp.firestore()
+export default firebaseApp.firestore()

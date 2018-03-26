@@ -2,7 +2,7 @@
   <div class="navbar">
     <nav class="nav-extended indigo darken-2">
       <div class="nav-content">
-        <router-link to="">
+        <router-link :to="{ name: 'Index' }">
           <span class="nav-title">Ninja Smoothies </span>
         </router-link>
         <a href="" class="btn-floating btn-large halfway-fab pink">

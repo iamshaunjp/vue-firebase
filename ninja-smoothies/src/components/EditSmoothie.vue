@@ -25,6 +25,7 @@
 
 <script>
 import db from '@/firebase/init'
+import slugify from 'slugify'
 
 export default {
   name: 'EditSmoothie',
@@ -32,12 +33,34 @@ export default {
     return{
       smoothie: null,
       another: null,
-      feedback: null
+      feedback: null,
+      slug: null
     }
   },
   methods: {
     editSmoothie(){
-
+       if(this.smoothie.title){
+        this.feedback = null
+        // create a slug
+        this.slug = slugify(this.smoothie.title, {
+          replacement: '-',
+          remove: /[$*_+~.()'"!\-:@]/g,
+          lower: true
+        })
+        // update smoothie in firestore
+        db.collection('smoothies').doc(this.smoothie.id).update({
+          title: this.smoothie.title,
+          slug: this.slug,
+          ingredients: this.smoothie.ingredients
+        }).then(() => {
+          this.$router.push({ name: 'Index' })
+        }).catch(err => {
+          console.log(err)
+        })
+      } else {
+        this.feedback = 'You must enter a smoothie title'
+      }
+    
     },
     addIng(){
       if(this.another){

@@ -18,7 +18,6 @@ export default new Router({
       component: Chat,
       props: true,
       beforeEnter: (to, from, next) => {
-        console.log(to.params)
         if(to.params.name){
           next()
         } else {

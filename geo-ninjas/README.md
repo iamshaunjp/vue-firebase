@@ -1,4 +1,4 @@
-# ninja-chat
+# geo-ninjas
 
 > A Vue.js project
 

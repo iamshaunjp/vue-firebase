@@ -1,5 +1,5 @@
 {
-  "name": "ninja-chat",
+  "name": "geo-ninjas",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "iamshaunjp <shaunjp@shaun-pelling.com>",
@@ -10,10 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "firebase": "^4.12.0",
-    "moment": "^2.21.0",
     "vue": "^2.5.2",
-    "vue-chat-scroll": "^1.2.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

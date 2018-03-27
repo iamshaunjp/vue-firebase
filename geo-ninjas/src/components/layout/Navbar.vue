@@ -4,7 +4,7 @@
       <div class="container">
         <a href="" class="brand-logo left">GeoNinjas!</a>
         <ul class="right">
-          <li><a href="">Signup</a></li>
+          <li><router-link :to="{ name: 'Signup' }">Signup</router-link></li>
           <li><a href="">Login</a></li>
         </ul>
       </div>

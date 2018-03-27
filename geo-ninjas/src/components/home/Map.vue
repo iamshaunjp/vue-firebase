@@ -1,6 +1,7 @@
 <template>
   <div class="map">
     <h2>Map</h2>
+    <div class="google-map"></div>
   </div>
 </template>
 
@@ -14,3 +15,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>

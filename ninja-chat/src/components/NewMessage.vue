@@ -3,21 +3,37 @@
     <form @submit.prevent="addMessage">
       <label for="new-message">New message (enter to add):</label>
       <input type="text" name="new-message" v-model="newMessage">
+      <p v-if="feedback" class="red-text">{{ feedback }}</p>
     </form>
   </div>
 </template>
 
 <script>
+import db from '@/firebase/init'
+
 export default {
   name: 'NewMessage',
   data(){
     return{
-      newMessage: null
+      newMessage: null,
+      feedback: null
     }
   },
   methods: {
     addMessage(){
-      console.log(this.newMessage, this.$route.params.name, Date.now())
+      if(this.newMessage){
+        db.collection('messages').add({
+          content: this.newMessage,
+          name: this.$route.params.name,
+          timestamp: Date.now()
+        }).catch(err => {
+          console.log(err)
+        })
+        this.newMessage = null
+        this.feedback = null
+      } else {
+        this.feedback = 'You must enter a message in order to send one'
+      }
     }
   }
 }

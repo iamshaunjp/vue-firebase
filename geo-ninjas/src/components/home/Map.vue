@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
   name: 'Map',
   data(){
@@ -26,6 +28,11 @@ export default {
   },
   mounted(){
     this.renderMap()
+    console.log(firebase.auth().currentUser)
+    setTimeout(() => {
+      console.log(firebase.auth().currentUser)
+    }, 1000)
+    
   }
 }
 </script>

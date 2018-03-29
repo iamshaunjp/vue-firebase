@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Map from '@/components/home/Map'
-import Signup from '@/components/auth/signup'
+import GMap from '@/components/home/GMap'
+import Signup from '@/components/auth/Signup'
 
 Vue.use(Router)
 
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Map',
-      component: Map
+      name: 'GMap',
+      component: GMap
     },
     {
       path: '/signup',

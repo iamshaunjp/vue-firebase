@@ -62,7 +62,7 @@ export default {
                 user_id: user.uid
               })
             }).then(() => {
-              this.$router.push({ name: 'Map' })
+              this.$router.push({ name: 'GMap' })
             })
             .catch(err => {
               this.feedback = err.message

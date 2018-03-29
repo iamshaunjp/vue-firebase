@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import firestore from 'firebase/firestore'
 
 var config = {
-  apiKey: "AIzaSyAzJSgvjk7m0VSQ-c6PlzlZ37B27mg0u7o",
+  apiKey: "AIzaSyDIPXfL1rYhDUtvIKw9jIZZKXAChmOA1DY",
   authDomain: "vue-geo-ninjas.firebaseapp.com",
   databaseURL: "https://vue-geo-ninjas.firebaseio.com",
   projectId: "vue-geo-ninjas",

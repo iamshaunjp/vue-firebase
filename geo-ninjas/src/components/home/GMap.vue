@@ -6,13 +6,14 @@
 
 <script>
 import firebase from 'firebase'
+import db from '@/firebase/init'
 
 export default {
   name: 'GMap',
   data(){
     return{
-      lat: 53,
-      lng: -2
+      lat: 0,
+      lng: 0
     }
   },
   methods: {
@@ -27,8 +28,20 @@ export default {
     }
   },
   mounted(){
-    this.renderMap()
-    console.log(firebase.auth().currentUser)
+    //get current location
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.lat = pos.coords.latitude
+        this.lng = pos.coords.longitude
+        this.renderMap()
+      }, (err) => {
+        console.log(err) 
+      }, { maximumAge: Infinity }) // cached location
+    } else {
+      // position centre by default values
+      this.renderMap()
+    }   
+
   }
 }
 </script>

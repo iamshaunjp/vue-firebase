@@ -8,7 +8,7 @@
 import firebase from 'firebase'
 
 export default {
-  name: 'Map',
+  name: 'GMap',
   data(){
     return{
       lat: 53,

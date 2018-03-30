@@ -54,7 +54,7 @@ export default {
 
       }, (err) => {
         console.log(err) 
-      }, { maximumAge: Infinity }) // cached location
+      }, { maximumAge: 60000 }) // cached location
     } else {
       // position centre by default values
       this.renderMap()

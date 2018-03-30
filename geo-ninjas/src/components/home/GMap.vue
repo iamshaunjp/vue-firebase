@@ -53,8 +53,9 @@ export default {
         })
 
       }, (err) => {
-        console.log(err) 
-      }, { maximumAge: 60000 }) // cached location
+        // timeout, use default values
+        this.renderMap()
+      }, { maximumAge: 60000, timeout: 3000 }) // cached location
     } else {
       // position centre by default values
       this.renderMap()

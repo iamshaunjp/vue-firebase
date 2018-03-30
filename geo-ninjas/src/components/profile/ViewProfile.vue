@@ -54,7 +54,8 @@ export default {
         db.collection('comments').add({
           to: this.$route.params.id,
           from: this.user.id,
-          content: this.newComment
+          content: this.newComment,
+          time: Date.now()
         }).then(doc => {
           this.newComment = null
         })

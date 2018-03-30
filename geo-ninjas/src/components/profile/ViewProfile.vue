@@ -9,6 +9,7 @@
         <div class="field">
           <label for="comment">Add a comment</label>
           <input type="text" name="comment" v-model="newComment">
+          <p v-if="feedback" class="red-text center">{{ feedback }}</p>
         </div>
       </form>
     </div>
@@ -44,7 +45,6 @@ export default {
     ref.doc(this.$route.params.id).get()
     .then(user => {
       this.profile = user.data()
-      console.log(this.profile)
     })
   },
   methods: {
@@ -52,13 +52,10 @@ export default {
       if(this.newComment){
         this.feedback = null
         db.collection('comments').add({
+          to: this.$route.params.id,
           from: this.user.id,
           content: this.newComment
         }).then(doc => {
-          this.profile.comment_ids.push(doc.id)
-          db.collection('users').doc(this.$route.params.id).update({
-            comment_ids: this.profile.comment_ids
-          })
           this.newComment = null
         })
       } else {

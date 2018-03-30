@@ -35,8 +35,9 @@ export default {
         this.lng = pos.coords.longitude
         this.renderMap()
       }, (err) => {
-        console.log(err) 
-      }, { maximumAge: 60000 }) // cached location
+        console.log(err)
+        this.renderMap()
+      }, { maximumAge: 60000, timeout: 3000 }) // cached location
     } else {
       // position centre by default values
       this.renderMap()

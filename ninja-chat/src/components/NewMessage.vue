@@ -13,6 +13,7 @@ import db from '@/firebase/init'
 
 export default {
   name: 'NewMessage',
+  props: ['name'],
   data(){
     return{
       newMessage: null,
@@ -24,7 +25,7 @@ export default {
       if(this.newMessage){
         db.collection('messages').add({
           content: this.newMessage,
-          name: this.$route.params.name,
+          name: this.name,
           timestamp: Date.now()
         }).catch(err => {
           console.log(err)

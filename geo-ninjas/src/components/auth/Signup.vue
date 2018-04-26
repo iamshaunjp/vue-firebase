@@ -58,7 +58,6 @@ export default {
               ref.set({
                 alias: this.alias,
                 geolocation: null,
-                comment_ids: [],
                 user_id: user.uid
               })
             }).then(() => {

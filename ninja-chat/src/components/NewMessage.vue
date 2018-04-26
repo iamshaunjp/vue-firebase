@@ -10,6 +10,7 @@
 <script>
 export default {
   name: 'NewMessage',
+  props: ['name'],
   data(){
     return{
       newMessage: null
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     addMessage(){
-      console.log(this.newMessage, this.$route.params.name, Date.now())
+      console.log(this.newMessage, this.name, Date.now())
     }
   }
 }

@@ -1,4 +1,4 @@
-# ninja-default
+# ninja-custom
 
 ## Project setup
 ```
